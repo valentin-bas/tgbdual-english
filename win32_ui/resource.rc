@@ -54,38 +54,56 @@ END
 
 IDR_MENU MENU 
 BEGIN
-    POPUP "ファイル(&F)"
+    //POPUP "ファイル(&F)"
+	POPUP "File (&F)"
     BEGIN
-        MENUITEM "Slot1に読みこみ(&1)",         ID_LOADROM
-        MENUITEM "Slot1リセット(&R)",           ID_RESET1
-        POPUP "状態保存(&S)"
+        //MENUITEM "Slot1に読みこみ(&1)",         ID_LOADROM
+		MENUITEM "Slot1 Load rom (&1)",         ID_LOADROM
+        //MENUITEM "Slot1リセット(&R)",           ID_RESET1
+		MENUITEM "Slot1 Reset (&R)",           ID_RESET1
+        //POPUP "状態保存(&S)"
+		POPUP "Save State (&S)"
         BEGIN
             MENUITEM "dummy",                       ID_SAVE_DMY
         END
-        POPUP "状態復元(&L)"
+        //POPUP "状態復元(&L)"
+		POPUP "Load State (&L)"
         BEGIN
             MENUITEM "dummy",                       ID_LOAD_DMY
         END
-        MENUITEM "一時停止(&P)",                ID_PAUSE
-        MENUITEM "Slot1解放(&F)",               ID_RELEASE_1
+        //MENUITEM "一時停止(&P)",                ID_PAUSE
+		MENUITEM "Pause (&P)",                ID_PAUSE
+        //MENUITEM "Slot1解放(&F)",               ID_RELEASE_1
+		MENUITEM "Slot1 Release (&F)",               ID_RELEASE_1
         MENUITEM SEPARATOR
-        MENUITEM "Slot2に読みこみ(&2)",         ID_LOADROM2
-        MENUITEM "Slot2リセット(&E)",           ID_RESET2
-        MENUITEM "Slot2解放(&Q)",               ID_RELEASE_2
+		//MENUITEM "Slot2に読みこみ(&2)",         ID_LOADROM2
+		MENUITEM "Slot2 Load (&2)",         ID_LOADROM2
+        //MENUITEM "Slot2リセット(&E)",           ID_RESET2
+		MENUITEM "Slot2 Reset (&E)",           ID_RESET2
+        //MENUITEM "Slot2解放(&Q)",               ID_RELEASE_2
+		MENUITEM "Slot2 Release (&Q)",               ID_RELEASE_2
         MENUITEM SEPARATOR
-        MENUITEM "通信対戦(&T)",                ID_CONNECT
+        //MENUITEM "通信対戦(&T)",                ID_CONNECT
+		MENUITEM "Connect (&T)",                ID_CONNECT
         MENUITEM SEPARATOR
-        MENUITEM "終了(&X)",                    ID_EXIT
+        //MENUITEM "終了(&X)",                    ID_EXIT
+		MENUITEM "Exit (&X)",                    ID_EXIT
     END
-    POPUP "オプション(&O)"
+    //POPUP "オプション(&O)"
+	POPUP "Options (&O)"
     BEGIN
-        MENUITEM "キーコンフィグ(&K)",          ID_KEY
-        MENUITEM "サウンド設定(&A)",            ID_SOUND
-        MENUITEM "速度設定(&S)",                ID_SPEED
-        POPUP "画面設定(&L)"
+        //MENUITEM "キーコンフィグ(&K)",          ID_KEY
+		MENUITEM "Key (&K)",          ID_KEY
+        //MENUITEM "サウンド設定(&A)",            ID_SOUND
+		MENUITEM "Sound (&A)",            ID_SOUND
+        //MENUITEM "速度設定(&S)",                ID_SPEED
+		 MENUITEM "Speed (&S)",                ID_SPEED
+        //POPUP "画面設定(&L)"
+		POPUP "Display Settings (&L)"
         BEGIN
-            MENUITEM "フルスクリーン   Alt+Enter",  ID_FULLSCREEN
-            MENUITEM "VSync(&V)",                   ID_VSYNC
+            //MENUITEM "フルスクリーン   Alt+Enter",  ID_FULLSCREEN
+			MENUITEM "Full Screen   Alt+Enter",  ID_FULLSCREEN
+            MENUITEM "VSync (&V)",                   ID_VSYNC
             MENUITEM SEPARATOR
             MENUITEM "x1",                          ID_X1
             MENUITEM "x2",                          ID_X2
@@ -96,89 +114,123 @@ BEGIN
             MENUITEM "Window Layer",                ID_WINDOW
             MENUITEM "Sprite Layer",                ID_SPRITE
             MENUITEM SEPARATOR
-            MENUITEM "フィルタ係数(&F)",            ID_FILTER
+            //MENUITEM "フィルタ係数(&F)",            ID_FILTER
+			MENUITEM "Filter (&F)",            ID_FILTER
         END
-        POPUP "機種設定(&G)"
+        //POPUP "機種設定(&G)"
+		POPUP "Model Settings(&G)"
         BEGIN
-            MENUITEM "GB(&G)",                      ID_MACHINE_GB
-            MENUITEM "GBC(&C)",                     ID_MACHINE_GBC
-            MENUITEM "GBA(&A)",                     ID_MACHINE_GBA
-            MENUITEM "自動判定(&A)",                ID_MACHINE_AUTO
+            MENUITEM "GB (&G)",                      ID_MACHINE_GB
+            MENUITEM "GBC (&C)",                     ID_MACHINE_GBC
+            MENUITEM "GBA (&A)",                     ID_MACHINE_GBA
+            //MENUITEM "自動判定(&A)",                ID_MACHINE_AUTO
+			MENUITEM "Auto (&A)",                ID_MACHINE_AUTO
             MENUITEM SEPARATOR
-            MENUITEM "デフォルトでGBAモードを使用(&D)", ID_DEFAULT_GBA
+            //MENUITEM "デフォルトでGBAモードを使用(&D)", ID_DEFAULT_GBA
+			MENUITEM "GBA By Default (&D)", ID_DEFAULT_GBA
         END
-        POPUP "エミュレータ設定(&E)"
+        //POPUP "エミュレータ設定(&E)"
+		POPUP "Emulator Settings (&E)"
         BEGIN
-            POPUP "描画フロー設定(&F)"
+            //POPUP "描画フロー設定(&F)"
+			POPUP "Surface type(&F)"
             BEGIN
                 MENUITEM "Heap->Sys->Primary (&1)",     ID_SURFACETYPE_1
                 MENUITEM "Heap->VRAM->Primary (&2)",    ID_SURFACETYPE_2
                 MENUITEM "Heap->Sys->VRAM->Primary (&3)", ID_SURFACETYPE_3
             END
-            POPUP "プロセスの優先度(&P)"
+            //POPUP "プロセスの優先度(&P)"
+			POPUP "Process Priority (&P)"
             BEGIN
-                MENUITEM "REALTIME (最高､非推奨) (&H)", ID_PROCESS_REALTIME
+                //MENUITEM "REALTIME (最高､非推奨) (&H)", ID_PROCESS_REALTIME
+				MENUITEM "REALTIME (Best, deprecated) (&H)", ID_PROCESS_REALTIME
                 MENUITEM "HIGH (&H)",                   ID_PROCESS_HIGH
                 MENUITEM "ABOVE_NORMAL (A)",            ID_PROCESS_ABOVE_NORMAL
 
                 MENUITEM "NORMAL (&N)",                 ID_PROCESS_NORMAL
                 MENUITEM "BELOW_NORMAL (&B)",           ID_PROCESS_BELOW_NORMAL
 
-                MENUITEM "IDLE (最低) (&I)",            ID_PROCESS_IDLE
+                //MENUITEM "IDLE (最低) (&I)",            ID_PROCESS_IDLE
+				MENUITEM "IDLE (Lowest) (&I)",            ID_PROCESS_IDLE
             END
         END
-        MENUITEM "ディレクトリ設定(&D)",        ID_DIRECTORY
+        //MENUITEM "ディレクトリ設定(&D)",        ID_DIRECTORY
+		MENUITEM "Directory (&D)",        ID_DIRECTORY
         MENUITEM SEPARATOR
-        POPUP "PARもどき(&P)"
+        //POPUP "PARもどき(&P)"
+		POPUP "PAR mock (&P)"
         BEGIN
-            MENUITEM "サーチ/入力(&S)",             ID_PAR
-            MENUITEM "入力のみ (&A)",               ID_CHEAT
-            MENUITEM "メモリビューワ(&M)",          ID_MEM_DUMP
-            MENUITEM "RAMバンクビューワ(&N)",       ID_NOMEM_DUMP
+            //MENUITEM "サーチ/入力(&S)",             ID_PAR
+			MENUITEM "Search / Input (&S)",             ID_PAR
+            //MENUITEM "入力のみ (&A)",               ID_CHEAT
+			MENUITEM "Only input (&A)",               ID_CHEAT
+            //MENUITEM "メモリビューワ(&M)",          ID_MEM_DUMP
+			MENUITEM "Memory viewer (&M)",          ID_MEM_DUMP
+            //MENUITEM "RAMバンクビューワ(&N)",       ID_NOMEM_DUMP
+			MENUITEM "RAM bank viewer (&N)",       ID_NOMEM_DUMP
         END
-        POPUP "記録(&R)"
+        //POPUP "記録(&R)"
+		POPUP "Record (&R)"
         BEGIN
-            MENUITEM "画面(&G)   Ctrl+P",           ID_SNAPSHOT
-            MENUITEM "サウンド(&S)   Ctrl+O",       ID_SOUNDRECORD
-            POPUP "ムービー(&M)"
+            //MENUITEM "画面(&G)   Ctrl+P",           ID_SNAPSHOT
+			MENUITEM "Screenshot (&G)   Ctrl+P",           ID_SNAPSHOT
+            //MENUITEM "サウンド(&S)   Ctrl+O",       ID_SOUNDRECORD
+			MENUITEM "Sound record (&S)   Ctrl+O",       ID_SOUNDRECORD
+            //POPUP "ムービー(&M)"
+			POPUP "Movie (&M)"
             BEGIN
-                MENUITEM "記録開始(&R)",                ID_MOVIE_START
-                MENUITEM "記録終了(&S)",                ID_MOVIE_END
+                //MENUITEM "記録開始(&R)",                ID_MOVIE_START
+				MENUITEM "Start Record (&R)",                ID_MOVIE_START
+                //MENUITEM "記録終了(&S)",                ID_MOVIE_END
+				MENUITEM "Stop Record (&S)",                ID_MOVIE_END
                 MENUITEM SEPARATOR
-                MENUITEM "再生開始(&P)",                ID_MOVIE_PLAY
-                MENUITEM "再生中断(&Q)",                ID_MOVIE_PLAY_STOP
+                //MENUITEM "再生開始(&P)",                ID_MOVIE_PLAY
+				MENUITEM "Start Movie (&P)",                ID_MOVIE_PLAY
+                //MENUITEM "再生中断(&Q)",                ID_MOVIE_PLAY_STOP
+				MENUITEM "Pause Movie (&Q)",                ID_MOVIE_PLAY_STOP
             END
         END
-        POPUP "特殊(&S)"
+        //POPUP "特殊(&S)"
+		POPUP "Special (&S)"
         BEGIN
-            MENUITEM "MBC3/RTC(&R)",                ID_REALTIMECLOCK
-            MENUITEM "モーションセンサー(&M)",      ID_KOROKORO
+            MENUITEM "MBC3/RTC (&R)",                ID_REALTIMECLOCK
+            //MENUITEM "モーションセンサー(&M)",      ID_KOROKORO
+			MENUITEM "Motion Sensor (&M)",      ID_KOROKORO
         END
-        POPUP "周辺機器(&E)"
+        //POPUP "周辺機器(&E)"
+		POPUP "Peripheral Equipment (&E)"
         BEGIN
             MENUITEM "dummy",                       ID_ENVIRONMRNT
         END
         MENUITEM SEPARATOR
-        MENUITEM "ログ表示(&L)",                ID_SHOWLOG
+        //MENUITEM "ログ表示(&L)",                ID_SHOWLOG
+		MENUITEM "Log Display (&L)",                ID_SHOWLOG
     END
-    POPUP "ヘルプ(&H)"
+    //POPUP "ヘルプ(&H)"
+	POPUP "Help (&H)"
     BEGIN
-        MENUITEM "dummy(&H)",                   ID_TGBHELP
+        MENUITEM "dummy (&H)",                   ID_TGBHELP
     END
 END
 
 IDR_CHEAT_MENU MENU 
 BEGIN
-    POPUP "ファイル(&F)"
+    //POPUP "ファイル(&F)"
+	POPUP "Cheat (&F)"
     BEGIN
-        MENUITEM "読み込み(&L)",                ID_CHEAT_LOAD
-        MENUITEM "保存(&S)",                    ID_CHEAT_SAVE
+        //MENUITEM "読み込み(&L)",                ID_CHEAT_LOAD
+		MENUITEM "Load (&L)",                ID_CHEAT_LOAD
+        //MENUITEM "保存(&S)",                    ID_CHEAT_SAVE
+		MENUITEM "Save (&S)",                    ID_CHEAT_SAVE
         MENUITEM SEPARATOR
-        MENUITEM "終了(&X)",                    ID_CHEAT_EXIT
+        //MENUITEM "終了(&X)",                    ID_CHEAT_EXIT
+		MENUITEM "Exit (&X)",                    ID_CHEAT_EXIT
     END
-    POPUP "編集(&E)"
+    //POPUP "編集(&E)"
+	POPUP "Edit (&E)"
     BEGIN
-        MENUITEM "全削除(&A)",                  ID_ALL_DELETE
+        //MENUITEM "全削除(&A)",                  ID_ALL_DELETE
+		MENUITEM "Delete All (&A)",                  ID_ALL_DELETE
     END
 END
 
