@@ -71,7 +71,7 @@ std::list<cheat_dat>::iterator cheat::find_cheat(char *name)
 			return ite;
 		}
 	}
-	return NULL;
+	return ite;
 }
 
 void cheat::create_unique_name(char *buf)

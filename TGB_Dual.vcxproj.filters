@@ -1,0 +1,153 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{bcaf4027-e818-48ad-9ed9-21afc6f1dcf5}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+    <Filter Include="Source Files\gb_core">
+      <UniqueIdentifier>{a2a8e580-23b3-4c09-a138-857a41f563a6}</UniqueIdentifier>
+      <Extensions>*.cpp</Extensions>
+    </Filter>
+    <Filter Include="Source Files\win32_ui">
+      <UniqueIdentifier>{c744bdd8-5f01-4a34-957a-d975101c99db}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gbr_interface">
+      <UniqueIdentifier>{f32f1acb-74f3-4626-b2b1-3547f132acab}</UniqueIdentifier>
+      <Extensions>cpp</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{16e70482-2b38-49ff-b1d7-383e16cc39fc}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl</Extensions>
+    </Filter>
+    <Filter Include="Header Files\_gb_core">
+      <UniqueIdentifier>{a9bf16d6-02b0-4344-9f5a-6c0cfc41d5c7}</UniqueIdentifier>
+      <Extensions>*.h</Extensions>
+    </Filter>
+    <Filter Include="Header Files\_win32_ui">
+      <UniqueIdentifier>{89ac443e-9d69-4c51-948b-be239845d790}</UniqueIdentifier>
+      <Extensions>*.h</Extensions>
+    </Filter>
+    <Filter Include="Header Files\_gbr_interface">
+      <UniqueIdentifier>{bb878276-19dc-406e-a5e4-27e231da5efd}</UniqueIdentifier>
+      <Extensions>h</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{2a7e6710-7d2c-48e3-b1fa-b580af0fea95}</UniqueIdentifier>
+      <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="gb_core\apu.cpp">
+      <Filter>Source Files\gb_core</Filter>
+    </ClCompile>
+    <ClCompile Include="gb_core\cheat.cpp">
+      <Filter>Source Files\gb_core</Filter>
+    </ClCompile>
+    <ClCompile Include="gb_core\cpu.cpp">
+      <Filter>Source Files\gb_core</Filter>
+    </ClCompile>
+    <ClCompile Include="gb_core\gb.cpp">
+      <Filter>Source Files\gb_core</Filter>
+    </ClCompile>
+    <ClCompile Include="gb_core\lcd.cpp">
+      <Filter>Source Files\gb_core</Filter>
+    </ClCompile>
+    <ClCompile Include="gb_core\mbc.cpp">
+      <Filter>Source Files\gb_core</Filter>
+    </ClCompile>
+    <ClCompile Include="gb_core\rom.cpp">
+      <Filter>Source Files\gb_core</Filter>
+    </ClCompile>
+    <ClCompile Include="win32_ui\dmy_renderer.cpp">
+      <Filter>Source Files\win32_ui</Filter>
+    </ClCompile>
+    <ClCompile Include="win32_ui\dx_renderer.cpp">
+      <Filter>Source Files\win32_ui</Filter>
+    </ClCompile>
+    <ClCompile Include="win32_ui\setting.cpp">
+      <Filter>Source Files\win32_ui</Filter>
+    </ClCompile>
+    <ClCompile Include="win32_ui\sock.cpp">
+      <Filter>Source Files\win32_ui</Filter>
+    </ClCompile>
+    <ClCompile Include="win32_ui\lib\socket_lib.cpp">
+      <Filter>Source Files\win32_ui</Filter>
+    </ClCompile>
+    <ClCompile Include="win32_ui\wavwrite.cpp">
+      <Filter>Source Files\win32_ui</Filter>
+    </ClCompile>
+    <ClCompile Include="win32_ui\winmain.cpp">
+      <Filter>Source Files\win32_ui</Filter>
+    </ClCompile>
+    <ClCompile Include="gbr_interface\gbr.cpp">
+      <Filter>Source Files\gbr_interface</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="win32_ui\resource.rc">
+      <Filter>Source Files\win32_ui</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="win32_ui\resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="gb_core\gb.h">
+      <Filter>Header Files\_gb_core</Filter>
+    </ClInclude>
+    <ClInclude Include="gb_core\gb_types.h">
+      <Filter>Header Files\_gb_core</Filter>
+    </ClInclude>
+    <ClInclude Include="gb_core\op_cb.h">
+      <Filter>Header Files\_gb_core</Filter>
+    </ClInclude>
+    <ClInclude Include="gb_core\op_normal.h">
+      <Filter>Header Files\_gb_core</Filter>
+    </ClInclude>
+    <ClInclude Include="gb_core\renderer.h">
+      <Filter>Header Files\_gb_core</Filter>
+    </ClInclude>
+    <ClInclude Include="win32_ui\lib\critical_section.h">
+      <Filter>Header Files\_win32_ui</Filter>
+    </ClInclude>
+    <ClInclude Include="win32_ui\dialogs.h">
+      <Filter>Header Files\_win32_ui</Filter>
+    </ClInclude>
+    <ClInclude Include="win32_ui\dmy_renderer.h">
+      <Filter>Header Files\_win32_ui</Filter>
+    </ClInclude>
+    <ClInclude Include="win32_ui\dx_renderer.h">
+      <Filter>Header Files\_win32_ui</Filter>
+    </ClInclude>
+    <ClInclude Include="win32_ui\keymap.h">
+      <Filter>Header Files\_win32_ui</Filter>
+    </ClInclude>
+    <ClInclude Include="win32_ui\network.h">
+      <Filter>Header Files\_win32_ui</Filter>
+    </ClInclude>
+    <ClInclude Include="win32_ui\setting.h">
+      <Filter>Header Files\_win32_ui</Filter>
+    </ClInclude>
+    <ClInclude Include="win32_ui\sock.h">
+      <Filter>Header Files\_win32_ui</Filter>
+    </ClInclude>
+    <ClInclude Include="win32_ui\lib\socket_lib.h">
+      <Filter>Header Files\_win32_ui</Filter>
+    </ClInclude>
+    <ClInclude Include="win32_ui\lib\thread.h">
+      <Filter>Header Files\_win32_ui</Filter>
+    </ClInclude>
+    <ClInclude Include="win32_ui\wavwrite.h">
+      <Filter>Header Files\_win32_ui</Filter>
+    </ClInclude>
+    <ClInclude Include="gbr_interface\gbr.h">
+      <Filter>Header Files\_gbr_interface</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="win32_ui\icon.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+</Project>
