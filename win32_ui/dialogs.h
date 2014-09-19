@@ -2853,7 +2853,7 @@ static BOOL CALLBACK ConnectProc(HWND hwnd,UINT uMsg,WPARAM wParam,LPARAM lParam
 			CheckDlgButton(hwnd,IDC_SERVER,BST_CHECKED);
 			EnableWindow(GetDlgItem(hwnd,IDC_IPADDR),FALSE);
 
-			SetDlgItemText(hwnd,IDC_STATUS,"未接続です");
+			SetDlgItemText(hwnd,IDC_STATUS,"Not connected");
 			EnableWindow(GetDlgItem(hwnd,IDC_START),TRUE);
 			EnableWindow(GetDlgItem(hwnd,IDC_TERMINATE),FALSE);
 
@@ -2876,7 +2876,7 @@ static BOOL CALLBACK ConnectProc(HWND hwnd,UINT uMsg,WPARAM wParam,LPARAM lParam
 			return TRUE;
 		}
 		else if (LOWORD(wParam)==IDC_TERMINATE){
-			SetDlgItemText(hwnd,IDC_STATUS,"未接続です");
+			SetDlgItemText(hwnd,IDC_STATUS,"Not connected");
 			EnableWindow(GetDlgItem(hwnd,IDC_START),TRUE);
 			EnableWindow(GetDlgItem(hwnd,IDC_TERMINATE),FALSE);
 		}
@@ -2912,14 +2912,14 @@ static BOOL CALLBACK ConnectProc(HWND hwnd,UINT uMsg,WPARAM wParam,LPARAM lParam
 				GetDlgItemText(hwnd,IDC_PORT,tmp,sizeof(tmp));
 				port=atoi(tmp);
 				if (port<1024||port>65535){
-					SetDlgItemText(hwnd,IDC_STATUS,"ポート番号が不正です");
+					SetDlgItemText(hwnd,IDC_STATUS,"Invalid Port");
 					return TRUE;
 				}
 			}
 			char target[256];
 			SendDlgItemMessage(hwnd,IDC_IPADDR,WM_GETTEXT,256,(LPARAM)target);
 			if (!b_server&&target[0]=='\0'){
-				SetDlgItemText(hwnd,IDC_STATUS,"IPアドレスを入力してください");
+				SetDlgItemText(hwnd,IDC_STATUS,"Enter IP Address");
 				return TRUE;
 			}
 
@@ -2937,12 +2937,12 @@ static BOOL CALLBACK ConnectProc(HWND hwnd,UINT uMsg,WPARAM wParam,LPARAM lParam
 			if (!load_rom_only(my_rom,0)||!load_rom_only(tar_rom,1)){
 				delete g_gb[0];g_gb[0]=NULL;
 				delete g_gb[1];g_gb[1]=NULL;
-				SetDlgItemText(hwnd,IDC_STATUS,"ROMイメージが読み込めません");
+				SetDlgItemText(hwnd,IDC_STATUS,"Can't read the ROM");
 				return TRUE;
 			}
 
 			if (b_server){
-				SetDlgItemText(hwnd,IDC_STATUS,"接続を待っています...");
+				SetDlgItemText(hwnd,IDC_STATUS,"Waiting for connection");
 
 				// とりあえずサーバを起動
 				net=new tgb_netplay(port);
@@ -2960,7 +2960,7 @@ static BOOL CALLBACK ConnectProc(HWND hwnd,UINT uMsg,WPARAM wParam,LPARAM lParam
 				}
 				strcpy(p[0],target);
 
-				SetDlgItemText(hwnd,IDC_STATUS,"接続しています...");
+				SetDlgItemText(hwnd,IDC_STATUS,"Already connected");
 				// クライアント起動
 				net=new tgb_netplay(string(target),port);
 				net->send_sram((char*)g_gb[0]->get_rom()->get_sram(),
